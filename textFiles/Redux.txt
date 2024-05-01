@@ -1,0 +1,8 @@
+-----------------------     BASIC REDUX   ------------------------
+
+1. redux manages the state which means the data. it shares the data between components.
+
+2. Redux creates a store objet  , store has the logic to handle the states
+
+3. dispacher dispatch the data if any changes occur , reducer changes that data updation
+   and store it in the store. we can keep track of the data changes in redux
