@@ -13,4 +13,26 @@
 
 1. FUNCTIONAL PROGRAMMING means divide the complex problem into smaller functions. we can easily debuggable.
 
-2. fuction as variable ,  passed as argument ,we can return function
+2. function as variable ,  passed as argument ,we can return function.
+
+3. FUNCTIONAL PROGRAMMING library Loadash using this we can implement FP.
+
+4. Compose , pipe these are pre written function 
+
+  Compose --> we pass list of function to perform tasks
+  Pipe --> we pass the function left to right means  step by step function calls
+
+------------------------- CURRYING ----------------------
+
+1. Currying is method to create function with param and function with param do operation with the 
+  returned function. getting the single param and nesting the function .
+ 
+a = a => b => a + b --> a(10)(12) --> Currying technique
+
+2. pure function --> function that we creates there is no dependant on any other data.
+
+----------------------------- IMMUTABILITY -----------------
+
+1. IMMUTABILITY means cannot change the properties of objects. take the copies of the original object
+
+and change the updated versio of the properties
