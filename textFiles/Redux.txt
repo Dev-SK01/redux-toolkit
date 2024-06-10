@@ -2,10 +2,9 @@
 
 1. redux manages the state which means the data. it shares the data between components.
 
-2. Redux creates a store objetct  , store has the logic to handle the states
+2. Redux creates a store object  , store has the logic to handle the states
 
-3. dispacher dispatch the data if any changes occur , reducer changes that data updation
-   and store it in the store. we can keep track of the data changes in redux
+3. dispacher dispatch the data if any changes occur , reducer changes that data updation and store it in the store. we can keep track of the data changes in redux. Reducer has the state logic and upadte the  state
 
 4. IMMUTABILITY --> it cannot be changet. it makes the copy of the object or array
 

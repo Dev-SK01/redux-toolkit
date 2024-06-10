@@ -2,13 +2,14 @@
   Main Goal is get a string from user and trim that string wap in html element. 
   Implementing Functional Programming Concepts.
 */
-const {compose , pipe } = require('lodash/fp')  
+const {compose , pipe } = require('lodash/fp') 
+
 function trimStr(str){
     return str.trim();
 }
 
 function wrapInElement(elem){
-   return str => {
+   return (str) => {
     return `<${elem}>${str}</${elem}>`
    }
 }
