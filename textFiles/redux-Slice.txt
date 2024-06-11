@@ -1,0 +1,39 @@
+---------------------------- Redux Slice -------------------
+
+1. In store all the states are here we are seperating those states as slice for efficient use.
+
+2. creating Slice is easy import CreateSlice function from redux.
+
+3.set initial state of the Slice as object
+
+4. export 
+
+createsSlice = createsSlice({
+    name : 'Slice',
+    initialState,
+    redcers:{
+        logic1 : (logic) =>{} ,
+        logicN : (logicN) =>{}
+    }
+});
+
+5. Export the reducer logic inside the Created slice.
+
+6. Export reducer
+
+export {logic1 , logicN } = CreateSlice.actions;
+export default createsSlice.reducer ;
+
+---------------------- Using Slices in App component ------------------
+
+1.Import the created slice in the store. in store reducer set the created slice as property. also 
+  Import slice reducer function to dispathc in our app.
+
+2. in slice component import useSelector , useDispatch from react redux. it used to select
+   particular value from the created slice. dispatch is used to dispatch the reducer function
+
+const state = useSelector((state) => state.sliceName.state);
+const dispach = useDispatch;
+
+3. actions.payload gives the data of the performed actions.
+

@@ -35,3 +35,19 @@ a = a => b => a + b --> a(10)(12) --> Currying technique
 1. IMMUTABILITY means cannot change the properties of objects. take the copies of the original object
 
 and change the updated versio of the properties
+
+------------------------- BASIC Strucure of REDUX ----------------
+
+1.configureStore Creates the store in redux in configureStore function Reducer object  is there.
+
+2. Provider provides the store for our app.
+
+configureStore({
+  reducer : {
+    
+  }
+})
+
+3. Provider Provides the store for the entire app.wrap app component in Provider.
+
+4. In store all the states are here we are seperating those states as slice for efficient use.
