@@ -37,5 +37,14 @@ const dispach = useDispatch;
 
 3. actions.payload gives the data of the performed actions.
 
-4. nanaid --> gives id randomly
+4. nanaid --> gives id randomly.
+
+5. in reducer we can seperate the reducer logic for debug.
+
+reducer:{
+  reducer1 :{
+    reducer(param) // reducer logic
+    prepare(parma from payload ) // preparation structure
+  }
+}
 

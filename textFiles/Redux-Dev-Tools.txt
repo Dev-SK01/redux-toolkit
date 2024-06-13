@@ -1,0 +1,6 @@
+------------------------ REDUX DEV TOOLS ------------------
+1. In DEV TOOLS state section we can track the states in graphical format.
+
+2. Diff > gives the new state changes in the Component.
+
+3. Open Browser Extension Search Redux Dev tools
