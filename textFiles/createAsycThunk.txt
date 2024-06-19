@@ -1,0 +1,25 @@
+----------------------------- REDUX CREATE ASYNC THUNK ------------------
+
+1.createAsyncThunk --> help us to handle the state of the async and promises handling in redux.
+   before using the createAsyncThunk create intitial state as object. status and error props.
+
+2. It take three params type string , callback functions , options. It gives us a threee state of 
+   the promises Fulfilled | Pending | Rejected.
+
+3.We need to create a reducer logic for createAsyncThunk().
+  extraReducers is a reducer logic for createAsyncThunk . it take builder param. builder is an object.
+  
+  extraReducers(builder){
+    builder.addCase(promise.state , (state,action)=>{
+
+    }) --> adding the case for each promises state. what to do in that state.
+  };   --> action holds the response data from the server.
+
+4. export all variables to use in our application. 
+
+5. unwrap() --> unwraps the async thunk promises to used to find and show the error.
+
+6.const sampleThunk = createAsyncThunk('sample/thunk' , async => (data) {
+  const response = await axios.get(url);
+  return response.data;
+})  it gives only promises. we need to handle the promise state 

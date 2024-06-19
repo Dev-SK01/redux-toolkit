@@ -1,5 +1,4 @@
 import { createSlice , nanoid } from "@reduxjs/toolkit";
-import {sub} from 'date-fns'
 
 const initialState = [
     {
@@ -41,6 +40,7 @@ export const postSlice = createSlice({
             reducer(state, action ) {
                 state.push(action.payload)
             },
+            // before preparations for the reducer function.
             prepare(title, content,author) {
                 return {
                     payload: {
@@ -60,9 +60,9 @@ export const postSlice = createSlice({
                 }}},
         reactionAdded(state ,action){
             const {postId ,reaction} = action.payload;
-            console.log(postId ,reaction);
+            // console.log(postId ,reaction);
             const foundPost = state.find((posts) => posts.id == postId);
-            console.log(foundPost)
+            // console.log(foundPost)
             if(foundPost){
                 foundPost.reactions[reaction]++;
             }
