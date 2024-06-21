@@ -29,7 +29,7 @@ export default createsSlice.reducer ;
 1.Import the created slice in the store. in store reducer set the created slice as property. also 
   Import slice reducer function to dispathc in our app.
 
-2. in slice component import useSelector , useDispatch from react redux. it used to select
+2. in slice component import useSelector() , useDispatch() from react redux. it used to select
    particular value from the created slice. dispatch is used to dispatch the reducer function
 
 const state = useSelector((state) => state.sliceName.state);
@@ -37,7 +37,7 @@ const dispach = useDispatch;
 
 3. actions.payload gives the data of the performed actions.
 
-4. nanaid --> gives id randomly.
+4. nanoid --> gives id randomly.
 
 5. in reducer we can seperate the reducer logic for debug.
 
@@ -47,4 +47,8 @@ reducer:{
     prepare(parma from payload ) // preparation structure
   }
 }
+
+6. extraReducer(builder){
+
+} --> its used to handle the API actions using redux. It is a reducer function.
 

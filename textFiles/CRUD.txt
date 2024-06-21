@@ -1,0 +1,11 @@
+------------------------------- REDUC CRUD OPERATIONS ----------------
+
+1. use CreateAsyncThunk to perform the CRUD.
+
+2. CreateAsyncThunk return the data what data api send to us and the promise state.
+
+3.extraReducer we need to handle the the state and their respective respose data.
+   In redux State updation.
+
+4. use TRY blocks to handle the api actions.
+

@@ -11,8 +11,12 @@ const URL = 'http://localhost:3001/posts';
 
 
 export const fetchPosts = createAsyncThunk('post/fetchPost', async()=>{
-    const res = await axios.get(URL);
-    return res.data;
+    try{
+        const res = await axios.get(URL);
+        return res.data;
+    }catch(err){
+        return err.message;
+    }
 })
 // slice for Async thunk slice
 const asyncThunkSlice = createSlice({
@@ -27,7 +31,12 @@ const asyncThunkSlice = createSlice({
         })
         .addCase(fetchPosts.fulfilled , (state , action) =>{
             state.status = 'fulfilled';
-            state.posts = state.posts.concat(action.payload);
+            if(typeof action.payload == 'string'){
+                state.err = action.payload;
+                state.posts = state.posts;
+            }else{
+                state.posts = state.posts.concat(action.payload);
+            }
         })
         .addCase(fetchPosts.rejected , (state) =>{
             state.status = 'rejected'
