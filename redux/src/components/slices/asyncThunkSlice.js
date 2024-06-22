@@ -33,7 +33,7 @@ const asyncThunkSlice = createSlice({
             state.status = 'fulfilled';
             if(typeof action.payload == 'string'){
                 state.err = action.payload;
-                state.posts = state.posts;
+                state.posts = state.posts; 
             }else{
                 state.posts = state.posts.concat(action.payload);
             }

@@ -52,3 +52,7 @@ reducer:{
 
 } --> its used to handle the API actions using redux. It is a reducer function.
 
+7. if we use more than  one parma in users reducer or slice export function pass state in arrow 
+   function then pass the parma to the defined function.
+   (state)=> exportFunc(state,parmaN)
+

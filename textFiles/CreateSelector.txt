@@ -1,0 +1,49 @@
+----------------------------------- REUCX CREATE SELECTOR --------------
+
+1. it a memoization for redux to enhance perfomance. it works like react memoization.
+
+2. createSelector(['prewritten reducer functions'] , (function return data) => ('performs some operations'));
+
+3. it take input as function that we created. and take function as parameter,  based on param
+it prform some operations.
+
+4. useSelector(state , createSelector function(params)); performs some operations base on the writte
+
+logic inside the createSelector function.
+
+5. it will be used in two slices are communicated.
+
+MEMOZIATION --> it like cacheing the result if the same results will generated it dont run the code. send the cached data. it run only the differnt results are generated.
+
+------------------------------- React MEMO -----------------
+
+1. component = React.memo(componentFunction);
+
+2.in the above case the react memo will work when the component props are changed.
+
+----------------------------------- NORMALIZATION IN REDUX --------------------
+
+1.Noramization in  redux is structuring the redux state data.
+
+2.It uses Their id for normalizing the state data. it also provide CRUD operations functions by default.
+
+3.CreateEntityAdapter() --> it s NORMALIZATION function for Redux. It only performed on normalixed data.
+
+4.It maps the data by their id , Entities are the id mapped data.
+
+Example : 
+{
+    id: [1,2,3],
+    name : 'dummy'
+} --> mapped ID
+
+{
+    {
+        id:1,
+        data : 'dummy'
+    }
+    {
+        id:2,
+        data : 'dummy'
+    }
+} --> Entity

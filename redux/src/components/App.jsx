@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-     {/* <Counter /> */}
+     <Counter />
      <Posts />
      <Asyncthunk />
     </>

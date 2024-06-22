@@ -1,0 +1,4 @@
+----------------------------------- REACT DEV TOOLS ---------------------
+
+1. Profiler --> record the state changes and the rendered components. It willl help us TOOLS
+  optimize the perfomance of the react apllications.

@@ -1,7 +1,9 @@
-import { React, useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addPost } from "./postSlice";
-const CreateNewPost = () => {
+import React from "react";
+
+let CreateNewPost = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -48,5 +50,5 @@ const CreateNewPost = () => {
     </section>
   );
 };
-
+CreateNewPost = React.memo(CreateNewPost);
 export default CreateNewPost;
