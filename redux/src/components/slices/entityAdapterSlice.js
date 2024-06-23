@@ -1,19 +1,20 @@
-import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
-
+import { createEntityAdapter, createSlice , createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 const adapter = createEntityAdapter({
     sortComparer: (a, b) => b.date.localeCompare(a.date)
 }); // adapter for the normalized data
 
-const initialState = adapter.getInitialState({
-    status: 'idle',
-    err: null
-}); // intial state of the normalized data.
+export const fetchData = createAsyncThunk('posts/fetch' , async()=>{
+    const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
+    return res.data;
+});
+const initialState = adapter.getInitialState(); // intial state of the normalized data.
 
 export const entitySlice = createSlice({
-    name: 'entityAdapter',
+    name: 'entity',
     initialState,
     reducers: {
-        addPost: {
+        addEntityPost: {
             reducer(state, action) {
                 adapter.addOne(state,action.payload);
             },
@@ -37,7 +38,7 @@ export const entitySlice = createSlice({
                 }
             }
         },
-        reactionAdded(state ,action){
+        addReactions(state ,action){
             const {postId ,reaction} = action.payload;
             // console.log(postId ,reaction);
             const foundPost = state.entities[postId];
@@ -47,9 +48,17 @@ export const entitySlice = createSlice({
             }
         }
     },
+    extraReducers(builder){
+        builder.addCase(fetchData.fulfilled , (state , action)=>{
+            const load = action.payload.map(post =>{
+                post.date = new Date().toISOString();
+                return post;
+            });
+            adapter.upsertMany(state,load)
+        });
+    }
 }); // creating the entity slice for that state.
 
-export const {selectIds , selectById} = adapter.getSelectors((state) => state.posts);
-export const {addPost , reactionAdded}  = entitySlice.actions;
-
+export const {selectIds , selectById } = adapter.getSelectors((state) => state.entity);
+export const {addEntityPost , addReactions}  = entitySlice.actions;
 export default entitySlice.reducer;

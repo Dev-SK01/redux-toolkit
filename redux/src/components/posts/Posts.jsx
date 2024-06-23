@@ -5,13 +5,14 @@ import { postState } from "./postSlice";
 import TimeAgo from "./TimeAgo";
 import ReactionButtons from "./ReactionButtons";
 
+
 const Posts = () => {
   const postData = useSelector(postState);
   const orderedData = postData.slice().sort((a,b)=> b.date.localeCompare(a));
 
   return (
     <>
-      <CreateNewPost /> <br />
+      <CreateNewPost />
       <main>
         <h1>Posts</h1> <br />
         {orderedData.map((post) => (

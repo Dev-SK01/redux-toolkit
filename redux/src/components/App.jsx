@@ -3,6 +3,7 @@ import "../css/App.css";
 import Counter from "./Counter";
 import Posts from "./posts/Posts";
 import Asyncthunk from "./Asyncthunk";
+import Entityadapter from "./Entityadapter";
 function App() {
 
   return (
@@ -10,6 +11,7 @@ function App() {
      <Counter />
      <Posts />
      <Asyncthunk />
+     <Entityadapter />
     </>
   );
 }

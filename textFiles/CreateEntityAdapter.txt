@@ -30,3 +30,11 @@ getSelectors((state) => state.prop)
 2. selctByIds --> return the array of the id.
 
 3. selectById --> retutn the given id with entity.
+
+----------
+While using the adapter that adapter will use only on api. it convertes our data into normalized data.
+using the createAsyncThunk.
+
+be careful of using the createEntityadapter it works only on api.
+
+it creates the ids and entites for teh fethed data and store it inthe store .
