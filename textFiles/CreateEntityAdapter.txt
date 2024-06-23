@@ -1,0 +1,32 @@
+----------------------------- Redux CREATE ENTITY ADAPTER ----------
+
+1.createEntityadapter() --> it a redux function to perform the normalized data structure.
+  it gives the prebuilt reducers and selectors only for normalized data structure.
+
+2. createEntityadapter creates the adapter for the data. to access the CRUD fucntions 
+
+ createEntityadapter({
+    sortComparer : (a,b) => b.prop.localeCompare(a.prop); // gives the sorted array data.
+}); holds the prebuilt function to perfor the CRUD operations.
+
+3. state.entities[id] --> gives the entity with id.
+
+4. upsertMany(state , payload) --> updates the many array entities or single objects in the state.
+
+5. addOne(state , payload) --> accepts the new entity and if it is not presented.
+
+6. getInitialState() --> gives the intial state of the entity.
+
+7. removeOne(state , id) --> deletes the given id in the entity.
+
+-------------------------- SELECTORS ------------------
+
+use getSelectors to get perform the operations
+
+getSelectors((state) => state.prop)
+
+1. selectAll --> return the array of entity with id.
+
+2. selctByIds --> return the array of the id.
+
+3. selectById --> retutn the given id with entity.
